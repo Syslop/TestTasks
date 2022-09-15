@@ -12,11 +12,11 @@ using System.Text;
 Console.WriteLine("Please enter a signed number: ");
 int signedNumber = Convert.ToInt32(Console.ReadLine());
 
-getBinaryCode(signedNumber); // 1
-//getBinaryCodeWitoutStrB(signedNumber); // 2
+GetBinaryCode(signedNumber); // 1
+//GetBinaryCodeWitoutStrB(signedNumber); // 2
 
 //Get and print to console Binary Code signedNumber with String Builder
-void getBinaryCode(int signedNumber)
+void GetBinaryCode(int signedNumber)
 {
     StringBuilder binaryCodeStrB = new StringBuilder();
     int wholePart = signedNumber / 2;
@@ -33,7 +33,7 @@ void getBinaryCode(int signedNumber)
 }
 
 //Get and print to console Binary Code signedNumber with String
-void getBinaryCodeWitoutStrB(int signedNumber)
+void GetBinaryCodeWitoutStrB(int signedNumber)
 {
     string binaryCodeStr = "";
     int wholePart = signedNumber / 2;
