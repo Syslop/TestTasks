@@ -19,6 +19,9 @@ else
 {
     StringBuilder str = GetBinaryCode(signedNumber);
     Console.WriteLine(ConvertForNegative(str));
+
+//  string str = GetBinaryCodeWitoutStrB(signedNumber);
+//  Console.WriteLine(ConvertForNegativeStr(str));
 }
 //Console.WriteLine(GetBinaryCodeWitoutStrB(signedNumber)); // 2
 
@@ -62,7 +65,14 @@ StringBuilder ConvertForNegative(StringBuilder stringBuilder)
     stringBuilder.Replace('1', 's');
     stringBuilder.Replace('0', '1');
     stringBuilder.Replace('s', '0');
-
-
     return stringBuilder;
+}
+
+string ConvertForNegativeStr(string str)
+{
+    str.Replace("-", "");
+    str.Replace('1', 's');
+    str.Replace('0', '1');
+    str.Replace('s', '0');
+    return str;
 }
