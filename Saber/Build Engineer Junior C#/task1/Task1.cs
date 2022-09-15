@@ -11,7 +11,15 @@ using System.Text;
 Console.WriteLine("Please enter a signed number: ");
 int signedNumber = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(GetBinaryCode(signedNumber)); // 1
+if (signedNumber > 0) 
+{
+    Console.WriteLine(GetBinaryCode(signedNumber)); // 1
+} 
+else 
+{
+    StringBuilder str = GetBinaryCode(signedNumber);
+    Console.WriteLine(ConvertForNegative(str));
+}
 //Console.WriteLine(GetBinaryCodeWitoutStrB(signedNumber)); // 2
 
 //Get Binary Code signedNumber with String Builder
@@ -46,4 +54,15 @@ string GetBinaryCodeWitoutStrB(int signedNumber)
         wholePart = wholePart / 2;
     }
     return binaryCodeStr;
+}
+
+StringBuilder ConvertForNegative(StringBuilder stringBuilder)
+{
+    stringBuilder.Replace("-", "");
+    stringBuilder.Replace('1', 's');
+    stringBuilder.Replace('0', '1');
+    stringBuilder.Replace('s', '0');
+
+
+    return stringBuilder;
 }
