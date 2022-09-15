@@ -14,6 +14,7 @@ int signedNumber = Convert.ToInt32(Console.ReadLine());
 if (signedNumber > 0) 
 {
     Console.WriteLine(GetBinaryCode(signedNumber)); // 1
+    //Console.WriteLine(GetBinaryCodeWitoutStrB(signedNumber)); // 2
 } 
 else 
 {
@@ -23,7 +24,6 @@ else
 //  string str = GetBinaryCodeWitoutStrB(signedNumber);
 //  Console.WriteLine(ConvertForNegativeStr(str));
 }
-//Console.WriteLine(GetBinaryCodeWitoutStrB(signedNumber)); // 2
 
 //Get Binary Code signedNumber with String Builder
 StringBuilder GetBinaryCode(int signedNumber)
