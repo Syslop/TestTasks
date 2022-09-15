@@ -4,7 +4,6 @@
 не используя библиотечных классов или функций. 
 
 */
-
 using System.Text;
 
 
@@ -12,11 +11,11 @@ using System.Text;
 Console.WriteLine("Please enter a signed number: ");
 int signedNumber = Convert.ToInt32(Console.ReadLine());
 
-GetBinaryCode(signedNumber); // 1
-//GetBinaryCodeWitoutStrB(signedNumber); // 2
+Console.WriteLine(GetBinaryCode(signedNumber)); // 1
+//Console.WriteLine(GetBinaryCodeWitoutStrB(signedNumber)); // 2
 
-//Get and print to console Binary Code signedNumber with String Builder
-void GetBinaryCode(int signedNumber)
+//Get Binary Code signedNumber with String Builder
+StringBuilder GetBinaryCode(int signedNumber)
 {
     StringBuilder binaryCodeStrB = new StringBuilder();
     int wholePart = signedNumber / 2;
@@ -29,11 +28,11 @@ void GetBinaryCode(int signedNumber)
         binaryCodeStrB.Insert(0, Convert.ToString(fractionalPart), 1);
         wholePart = wholePart / 2;
     }
-    Console.WriteLine(binaryCodeStrB);
+    return binaryCodeStrB;
 }
 
-//Get and print to console Binary Code signedNumber with String
-void GetBinaryCodeWitoutStrB(int signedNumber)
+//Get Binary Code signedNumber with String
+string GetBinaryCodeWitoutStrB(int signedNumber)
 {
     string binaryCodeStr = "";
     int wholePart = signedNumber / 2;
@@ -46,5 +45,5 @@ void GetBinaryCodeWitoutStrB(int signedNumber)
         binaryCodeStr = $"{fractionalPart}{binaryCodeStr}";
         wholePart = wholePart / 2;
     }
-    Console.WriteLine(binaryCodeStr);
+    return binaryCodeStr;
 }
